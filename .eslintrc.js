@@ -15,6 +15,8 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'no-path-concat': 'off',
+    'prefer-template': 'off',
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     camelcase: 'off',
