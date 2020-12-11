@@ -8,6 +8,8 @@ import mongoose from 'mongoose';
 import morgan from 'morgan';
 import cors from 'cors';
 
+import routes from './routes';
+
 const isProduction = process.env.STATUS === 'production';
 const PORT = process.env.PORT || 3000;
 
@@ -29,8 +31,11 @@ if (!isProduction) {
 
 app.use(cors());
 app.disable('x-powered-by');
+app.use(compression());
 app.use(bodyParser.urlencoded({ extended: false, limit: 1.5 * 1024 * 1024 }));
 app.use(bodyParser.json({ limit: 1.5 * 1024 * 1024 }));
+
+app.use(routes);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
