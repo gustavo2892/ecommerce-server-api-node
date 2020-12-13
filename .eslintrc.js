@@ -15,6 +15,8 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 'error',
+    'func-names': 'off',
+    'no-underscore-dangle': 'off',
     'no-path-concat': 'off',
     'prefer-template': 'off',
     'class-methods-use-this': 'off',
